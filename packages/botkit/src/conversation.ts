@@ -548,7 +548,7 @@ export class BotkitConversation<O extends object = {}> extends Dialog<O> {
         }
 
         // Run next step with the message text as the result.
-        return await this.resumeDialog(dc, DialogReason.continueCalled, dc.context.activity.text);
+        return await this.resumeDialog(dc, DialogReason.continueCalled, dc.context.activity);
     }
 
     /**
@@ -615,7 +615,7 @@ export class BotkitConversation<O extends object = {}> extends Dialog<O> {
                     // TODO: Allow functions to be passed in as patterns
                     // ie async(test) => Promise<boolean>
 
-                    if (step.result.match(test)) {
+                    if (step.result.text.match(test)) {
                         path = condition;
                         break;
                     }
