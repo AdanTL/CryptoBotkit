@@ -302,7 +302,7 @@ let parent = new BotkitConversation(PARENT_ID, controller);
 let child = new BotkitConversation(CHILD_ID, controller);
 
 parent.say('I have a few questions...');
-parent.addChildDialog(CHILD_ID, 'answers'); // capture responses in vars.questions
+parent.addChildDialog(CHILD_ID, 'answers'); // capture responses in vars.answers
 
 child.ask('Question 1!',[], 'question_1'); // no handler
 child.ask('Question 2!',[], 'question_2'); // no handler
